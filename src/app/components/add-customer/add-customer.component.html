@@ -1,0 +1,29 @@
+<mat-dailog-content [formGroup]="form">
+    <mat-grid-list cols="2">
+        <h2> Add new Customer</h2>
+        <mat-grid-tile>
+            <div>
+                <mat-form-field>
+                <mat-label>Name </mat-label>
+                <input matInput placeholder="name" formControlName="name" required [(ngModel)]="name">
+                <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched"> Enter  Name</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label> Phone Number </mat-label>
+                    <input matInput placeholder="70xxxxxxxx" formControlName="phoneNumber" required [(ngModel)]="phoneNumber">
+                    <mat-error *ngIf="form.get('quantity')?.invalid || form.get('quantity')?.dirty || form.get('quantity')?.touched"> Enter Phone Number</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label> Email </mat-label>
+                    <input matInput placeholder="you@gmail.com" formControlName="email" required [(ngModel)]="email">
+                    <mat-error *ngIf="form.get('price')?.invalid || form.get('price')?.dirty || form.get('price')?.touched"> Enter Email</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</mat-dailog-content> 
+
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" mat-dialog-close cdkFocusInintial (click)="addCustomer()">Save</button>
+</div>
